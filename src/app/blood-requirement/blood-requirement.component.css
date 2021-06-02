@@ -1,0 +1,7 @@
+button[md-menu-item] {
+  background-color: #ffffff;
+}
+button[md-menu-item]:hover {
+  background-color: rgb(25,118,210) !important;
+  color: #ffffff;
+}

@@ -1,0 +1,97 @@
+<div *ngIf="auth.authenticated() && auth.userProfile">
+  <div class="container">
+    <div>
+      <h3 class="mdl-color-text--blue-900">{{personalDetailsLabel}}</h3>
+    </div>
+    <div class="sj_column_content">
+      <div>
+        <!--<h4>Hey {{auth.userProfile.given_name}} !</h4>-->
+        <div><img [src]="auth.userProfile.picture" height="170px" width="170px" alt=""></div>
+        <div><p class="mdl-color-text--grey-500">{{auth.userProfile.email}}</p></div>
+      </div>
+      <div>
+        <div><p><span class="mdl-color-text--blue-700">{{pdNameLabel}} </span>&nbsp;&nbsp;{{auth.userProfile.name}}</p></div>
+        <div><p><span class="mdl-color-text--blue-700">{{pdDOBLabel}} </span><ng2-datepicker [(ngModel)]="dateOfBirth"></ng2-datepicker></p></div>
+      </div>
+      <div>
+        <div><p><span class="mdl-color-text--blue-700">{{pdBloodGroupLabel}} </span>&nbsp;&nbsp;A+</p></div>
+        <div><p><span class="mdl-color-text--blue-700">{{pdBodyWeightLabel}} </span>&nbsp;&nbsp;70 kg</p></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="auth.authenticated() && auth.userProfile" class="mdl-color--grey-50">
+  <div class="container">
+    <div>
+      <h3 class="mdl-color-text--blue-900">{{contactDetailsLabel}}</h3>
+    </div>
+    <div class="sj_column_content">
+      <div>
+        <div><p><span class="mdl-color-text--blue-700">{{cdContactNoLabel}}</span>&nbsp;&nbsp;+91&nbsp;9424859557</p></div>
+        <div><p><span class="mdl-color-text--blue-700">{{cdWhatsappContactNoLabel}}</span>&nbsp;&nbsp;+91&nbsp;9424859557</p></div>
+      </div>
+      <div class="sj_width_100per">
+        <!--<div><p><span class="mdl-color-text&#45;&#45;blue-700">Address</span></p></div>-->
+        <div>
+          <md-input placeholder="{{cdAddressLabel}} (find your address and click it on the map.)" value="{{address}}" class="sj_width_100per mdl-color-text--blue-700 sj_input_lighter"></md-input>
+          <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [draggable]="isDraggable" (mapClick)="clickedOnMap($event)">
+            <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [draggable]="isDraggable" [visible]="isVisible"></sebm-google-map-marker>
+          </sebm-google-map>
+        </div>
+      </div>
+      <div></div>
+      <div></div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="auth.authenticated() && auth.userProfile">
+  <div class="container">
+    <div>
+      <h3 class="mdl-color-text--blue-900">{{sevaHistoryLabel}}</h3>
+    </div>
+    <div>
+      <md-list>
+        <div class="sj_column_content">
+          <div>
+            <md-list-item>
+              <!--<img md-list-avatar src="..." alt="...">-->
+              <h3 md-line class="mdl-color-text--blue-700">Event 1</h3>
+              <p md-line>This is an event.</p>
+            </md-list-item>
+            <md-list-item>
+              <!--<img md-list-avatar src="..." alt="...">-->
+              <h3 md-line class="mdl-color-text--blue-700">Event 2</h3>
+              <p md-line>This is another event.</p>
+            </md-list-item>
+          </div>
+          <div>
+            <md-list-item>
+              <h3 md-line class="mdl-color-text--blue-700">Event 2</h3>
+              <p md-line>This is another event.</p>
+            </md-list-item>
+            <md-list-item>
+              <h3 md-line class="mdl-color-text--blue-700">Event 2</h3>
+              <p md-line>This is another event.</p>
+            </md-list-item>
+          </div>
+          <div>
+            <md-list-item>
+              <h3 md-line class="mdl-color-text--blue-700">Event 2</h3>
+              <p md-line>This is another event.</p>
+            </md-list-item>
+          </div>
+        </div>
+      </md-list>
+    </div>
+  </div>
+</div>
+
+<div class="mdl-color--pink-200 mdl-color-text--primary-contrast" *ngIf="!auth.authenticated()">
+  <div class="container">
+    <h4>You are not logged in, please click 'Login' button on side menu to login.</h4>
+  </div>
+</div>

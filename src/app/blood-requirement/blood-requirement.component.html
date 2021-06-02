@@ -1,0 +1,16 @@
+<div class="container">
+  <p>
+    blood-requirement works!
+  </p>
+
+  <button md-icon-button [md-menu-trigger-for]="bgMenu" class="mdl-color-text--blue-700">
+    <md-icon>more_vert</md-icon>
+  </button>
+  <md-menu #bgMenu="mdMenu" class="mdl-color--primary-contrast">
+    <button md-menu-item>A +</button>
+    <button md-menu-item>A -</button>
+    <button md-menu-item>B +</button>
+    <button md-menu-item>B -</button>
+  </md-menu>
+
+</div>
