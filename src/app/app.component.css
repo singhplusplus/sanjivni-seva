@@ -1,0 +1,13 @@
+.sj_min_height100 {
+  min-height: 100%;
+}
+.sj_app_background {
+  background-image: url("../sanjivni-seva-brand.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.sj_app_title_size {
+  height: 55px;
+  width: 205px;
+}
